@@ -16,7 +16,8 @@ def setUpDatabase(db_name):
 # TASK 1
 # CREATE TABLE FOR EMPLOYEE INFORMATION IN DATABASE AND ADD INFORMATION
 def create_employee_table(cur, conn):
-    pass
+   cur.execute ('CREATE TABLE IF NOT EXIST Employees (employee_id INTERGER PRIMARY KEY, first_name TEXT, last_name TEXT, hire_date TEXT, job_id INT, salary INT)')
+    conn.execute
 
 # ADD EMPLOYEE'S INFORMTION TO THE TABLE
 
@@ -27,11 +28,18 @@ def add_employee(filename, cur, conn):
     file_data = f.read()
     f.close()
     # THE REST IS UP TO YOU
-    pass
+    for item in js_data:
+        employee_id = int(item['employee_id'])
+        first_name = item['first_name"
+last_name = item['last_name']
+        hire_date = item('hire_date')
+        job_id = int(item['job_id'])
+        salary = item['salary']
+            cur.execute("INSERT OR IGNORE INTO Employees(employee_id, first_name, last_name, hire_date, job_id, salary) VALUES (?,?,?,?,?,?"), (employee_id, first_name, last_name, hire_date, job_id, salary)
 
 # TASK 2: GET JOB AND HIRE_DATE INFORMATION
 def job_and_hire_date(cur, conn):
-    pass
+
 
 # TASK 3: IDENTIFY PROBLEMATIC SALARY DATA
 # Apply JOIN clause to match individual employees
