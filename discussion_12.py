@@ -30,10 +30,10 @@ def add_employee(filename, cur, conn):
     # THE REST IS UP TO YOU
     for item in js_data:
         employee_id = int(item['employee_id'])
-        first_name = item['first_name"
+        first_name = item['first_name']
 last_name = item['last_name']
-        hire_date = item('hire_date')
-        job_id = int(item['job_id'])
+hire_date = item('hire_date')
+job_id = int(item['job_id'])
         salary = item['salary']
             cur.execute("INSERT OR IGNORE INTO Employees(employee_id, first_name, last_name, hire_date, job_id, salary) VALUES (?,?,?,?,?,?"), (employee_id, first_name, last_name, hire_date, job_id, salary)
 
